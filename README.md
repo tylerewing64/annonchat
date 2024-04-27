@@ -1,5 +1,14 @@
 # annonchat
-Anonymous end to end encrypted chat application hosted using tor hidden web services
+Anonymous end to end encrypted chat application hosted using tor hidden web services. 
+Annonchat always users to chat with eachother over a secured annoymous network without having to worry about data privacy concerns. 
+Key Features: 
+
+-Messages are temporarily stored in the database
+-Account registration requires no personal information
+-Conversations/chats are automatically deleted after 3 days of inactiveness 
+-End to end client encrypted chat messages.
+-User data hashed before being stored into the database
+
 
 Use cases/ User stories: 
 
@@ -25,7 +34,14 @@ Use case A006:
 To start chat you click start new chat - prompts user with popup to enter the unique user identifier then a new chat window is opened
 
 Use case A007:
-To send message user enters information in input field and client sends message to api/backend server servers receieve the mesage through https request and encrypts the message using hashing algorithm and stores it in the database.
+To send message user enters information in input field and client sends encrypted message to api/backend server servers receieve the mesage through https request  and stores it in the database.
 
 Use case A008: 
-To receive message user opens chat window. Client request recent messages pertaining to the open chat from api/backend. Api/backend queries database for recent messages pertaining to chat. database returns the chats api decrypts the chat into json/text and sends response to client.
+To receive message user opens chat window. Client request recent messages pertaining to the open chat from api/backend. Api/backend queries database for recent messages pertaining to chat. database returns the chats and is sent to client where the client decrypts the chat.
+
+
+System Design: 
+Restful API on backend using node version - v18.14.1
+Socket.IO for websocket protocol request.
+React.js for front end client side.
+MySql for database storage.
