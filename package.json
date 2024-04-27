@@ -1,0 +1,25 @@
+{
+  "name": "annonchat",
+  "version": "1.0.0",
+  "description": "Anonymous end to end encrypted chat application hosted using tor hidden web services",
+  "main": "index.js",
+  "scripts": {
+    "start": "node api.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tylerewing64/annonchat.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tylerewing64/annonchat/issues"
+  },
+  "homepage": "https://github.com/tylerewing64/annonchat#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemon": "^3.1.0"
+  }
+}
