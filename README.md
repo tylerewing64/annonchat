@@ -17,12 +17,12 @@ Key Features:
 Use cases/ User stories: 
 
 User Case A001:
-login with @name (store as a primary key in database)
+login with UNIQUE @name & password 
 
 User case A002: 
-To register user must provide a UNIQUE username and password.
-Encrypted key sent through first time account registration - this key is used to resolve forgotten username/ password issue
-
+To register user must provide a UNIQUE @username and password.
+Encrypted key sent through first time account registration - this key is used to resolve forgotten username/ password issue. 
+Users must store the encryped key locally. 
 Hashing to encode user login info
 
 Use case A003:
@@ -50,11 +50,12 @@ Restful API on backend using node version - v18.14.1
 
 Socket.IO for websocket protocol request.
 
-React.js for front end client side.
+React.js for front end client side -v18.3.1.
 
 MySql for database storage.
 
 Deployment strategy : 
+Clear net version
 
 Azure app services to host API. 
 
