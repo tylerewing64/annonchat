@@ -4,9 +4,13 @@ Annonchat always users to chat with eachother over a secured annoymous network w
 Key Features: 
 
 -Messages are temporarily stored in the database
+
 -Account registration requires no personal information
+
 -Conversations/chats are automatically deleted after 3 days of inactiveness 
+
 -End to end client encrypted chat messages.
+
 -User data hashed before being stored into the database
 
 
