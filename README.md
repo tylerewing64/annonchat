@@ -45,7 +45,20 @@ To receive message user opens chat window. Client request recent messages pertai
 
 
 System Design: 
+
 Restful API on backend using node version - v18.14.1
+
 Socket.IO for websocket protocol request.
+
 React.js for front end client side.
+
 MySql for database storage.
+
+Deployment strategy : 
+
+Azure app services to host API. 
+
+Azure SQL server to host MySql database
+
+Azure app services to host client side web application.
+
