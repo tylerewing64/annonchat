@@ -5,7 +5,7 @@ function App() {
     <body>
     <div className = "login-container"> 
     <div className = "login-wrapper">
-      <h1>AnnonChat.</h1> 
+      <h1>AnnonChat</h1> 
       <p>Username:</p>
       <input type = "text" id = "username-input"/>
       <p>Password:</p>
