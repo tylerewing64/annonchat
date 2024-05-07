@@ -1,12 +1,19 @@
 //Connect to azure database 
 //SQL SERVER CREDENTIALS
-const config ={ 
+const db ={ 
     "user": "annochat",
     "password": "Letmein1!",
-    "server": "annonchat.database.windows.net"
+    "server": "annonchat.database.windows.net",
+    "database": "annonchat",
+    options: {
+        encrypt: true, // Use encryption
+        enableArithAbort: true // Enable ArithAbort
+      }
+};
 
-}
+
+
 
 module.exports = { 
-    config
+    db
 }
