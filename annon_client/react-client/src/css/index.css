@@ -1,6 +1,7 @@
 *{ 
   margin:0px;
   padding:0px;
+  font-size:16px;
 }
 
 body {
@@ -10,10 +11,28 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-   background-color: #010409;
+  padding:0px;
+  
+   
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+::-webkit-scrollbar{ 
+  background-color: #171717;
+  width:10px;
+  
+  
+  
+}
+
+::-webkit-scrollbar-thumb{ 
+  background-color: white;
+  
+  
+  
 }
