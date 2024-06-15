@@ -14,54 +14,43 @@ function ChatNavigation() {
 
         <div className ="messages-tab padding-10px height-middle">
             <ul className='color-white'>
-                <li>Jill</li>
-                <li>John</li>
-                <li>Max</li>
-                <li>Jill</li>
-                <li>John</li>
-                <li>Max</li>
-                <li>Jill</li>
-                <li>John</li>
-                <li>Max</li>
-                <li>Jill</li>
-                <li>John</li>
-                <li>Max</li>
-                <li>Jill</li>
-                <li>John</li>
-                <li>Max</li>
-                <li>Jill</li>
-                <li>John</li>
-                <li>Max</li>
-                <li>Jill</li>
-                <li>John</li>
-                <li>Max</li>
-                <li>Jill</li>
-                <li>John</li>
-                <li>Max</li>
-                <li>Jill</li>
-                <li>John</li>
-                <li>Max</li>
-                <li>Jill</li>
-                <li>John</li>
-                <li>Max</li>
-                <li>Jill</li>
-                <li>John</li>
-                <li>Max</li>
-                <li>Jill</li>
-                <li>John</li>
-                <li>Max</li>
-                <li>Jill</li>
-                <li>John</li>
-                <li>Max</li>
-                <li>Jill</li>
-                <li>John</li>
-                <li>Max</li>
-                <li>Jill</li>
-                <li>John</li>
-                <li>Max</li>
-                <li>Jill</li>
-                <li>John</li>
-                <li>Max</li>
+                <li className = "hover-grey">Jill</li>
+                <li className = "hover-grey">John</li>
+                <li className = "hover-grey">Max</li>
+                <li className = "hover-grey">Jill</li>
+                <li className = "hover-grey">John</li>
+                <li className = "hover-grey">Max</li>
+                <li className = "hover-grey">Jill</li>
+                <li className = "hover-grey">John</li>
+                <li className = "hover-grey">Max</li>
+                <li className = "hover-grey">Jill</li>
+                <li className = "hover-grey">John</li>
+                <li className = "hover-grey">Max</li>
+                <li className = "hover-grey">Jill</li>
+                <li className = "hover-grey">John</li>
+                <li className = "hover-grey">Max</li>
+                <li className = "hover-grey">Jill</li>
+                <li className = "hover-grey">John</li>
+                <li className = "hover-grey">Max</li>
+                <li className = "hover-grey">Jill</li>
+                <li className = "hover-grey">John</li>
+                <li className = "hover-grey">Max</li>
+                <li className = "hover-grey">Jill</li>
+                <li className = "hover-grey">John</li>
+                <li className = "hover-grey">Max</li>
+                <li className = "hover-grey">Jill</li>
+                <li className = "hover-grey">John</li>
+                <li className = "hover-grey">Max</li>
+                <li className = "hover-grey">Jill</li>
+                <li className = "hover-grey">John</li>
+                <li className = "hover-grey">Max</li>
+                <li className = "hover-grey">Jill</li>
+                <li className = "hover-grey">John</li>
+                <li className = "hover-grey">Max</li>
+                <li className = "hover-grey">Jill</li>
+                <li className = "hover-grey">John</li>
+                <li className = "hover-grey">Max</li>
+              
             </ul>
         </div>
 

@@ -75,3 +75,61 @@ button{
 li { 
     margin-bottom: 5px;
 }
+
+.hover-grey:hover{ 
+    background-color: #212121;
+    
+}
+
+
+.center-horizontal{ 
+    margin: 0 auto;
+   
+}
+
+.width-100-percent{ 
+    width:100%;
+}
+
+.center-flex{ 
+    justify-content: center;
+    align-items: center;
+}
+
+input{
+    background-color:#2F2F2F ;
+    border: none;
+    border-radius: 10px;
+    padding: 7px;
+    outline:none;
+    color:white;
+} 
+
+.secondary-color-bg{ 
+    background-color:#2F2F2F ;
+}
+
+.border-radius-10px{ 
+    border-radius: 10px;
+}
+
+.cursor-pointer{ 
+    cursor: pointer;
+}
+
+
+.flex-basis-90-vh{ 
+    flex-basis:90vh;
+}
+
+.width-400px{ 
+    width:400px;
+}
+
+.flex-start{ 
+    justify-content: flex-start;
+}
+
+.width-90-percent{ 
+width:90%;
+}

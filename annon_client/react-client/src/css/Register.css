@@ -74,3 +74,24 @@ outline:none;
     font-size: 1rem;
     color:white
 }
+
+
+.animation-slider{
+    animation: slide 3s ease-in-out forwards;
+    
+}
+
+@keyframes slide {
+    0% {
+        flex-basis: 300px;
+        
+    }
+    50% {
+        flex-basis: 150px;
+        
+    }
+    100% {
+        flex-basis: 0;
+        
+    }
+}
