@@ -119,7 +119,7 @@ input{
 
 
 .flex-basis-90-vh{ 
-    flex-basis:90vh;
+    flex-basis:87vh;
 }
 
 .width-400px{ 
@@ -132,4 +132,31 @@ input{
 
 .width-90-percent{ 
 width:90%;
+}
+
+.width-50-percent{ 
+    width:90%;
+}
+
+.text-align-right{ 
+    text-align: right;
+}
+
+
+.margin-50-percent-left{ 
+    margin-left:40%;
+}
+
+
+.overflow-y{ 
+    overflow-y: auto;
+    
+}
+
+.margin-bottom-10px{ 
+    margin-bottom: 10px;
+}
+
+.margin-top-10px{ 
+    margin-top:10px;
 }

@@ -1,6 +1,11 @@
 import React from 'react'
 
 function ChatNavigation() {
+
+
+    const Myfunction = () => { 
+
+    }
   return (
     <div className='flex-column flex-across flex-space-between height-full '>
         <div className='nav-bar-control flex-across flex-space-between padding-10px height-top'>
@@ -8,48 +13,17 @@ function ChatNavigation() {
             <span class="material-symbols-outlined color-black">minimize</span>
             
          
-                <span class="material-symbols-outlined color-black">sms</span>
+                <span class="material-symbols-outlined color-black" onClick={() => Myfunction()}>sms</span>
           
         </div>
 
         <div className ="messages-tab padding-10px height-middle">
             <ul className='color-white'>
-                <li className = "hover-grey">Jill</li>
-                <li className = "hover-grey">John</li>
+                <li className = "hover-grey">Jevonte</li>
+                <li className = "hover-grey">Toookah</li>
                 <li className = "hover-grey">Max</li>
                 <li className = "hover-grey">Jill</li>
-                <li className = "hover-grey">John</li>
-                <li className = "hover-grey">Max</li>
-                <li className = "hover-grey">Jill</li>
-                <li className = "hover-grey">John</li>
-                <li className = "hover-grey">Max</li>
-                <li className = "hover-grey">Jill</li>
-                <li className = "hover-grey">John</li>
-                <li className = "hover-grey">Max</li>
-                <li className = "hover-grey">Jill</li>
-                <li className = "hover-grey">John</li>
-                <li className = "hover-grey">Max</li>
-                <li className = "hover-grey">Jill</li>
-                <li className = "hover-grey">John</li>
-                <li className = "hover-grey">Max</li>
-                <li className = "hover-grey">Jill</li>
-                <li className = "hover-grey">John</li>
-                <li className = "hover-grey">Max</li>
-                <li className = "hover-grey">Jill</li>
-                <li className = "hover-grey">John</li>
-                <li className = "hover-grey">Max</li>
-                <li className = "hover-grey">Jill</li>
-                <li className = "hover-grey">John</li>
-                <li className = "hover-grey">Max</li>
-                <li className = "hover-grey">Jill</li>
-                <li className = "hover-grey">John</li>
-                <li className = "hover-grey">Max</li>
-                <li className = "hover-grey">Jill</li>
-                <li className = "hover-grey">John</li>
-                <li className = "hover-grey">Max</li>
-                <li className = "hover-grey">Jill</li>
-                <li className = "hover-grey">John</li>
-                <li className = "hover-grey">Max</li>
+            
               
             </ul>
         </div>
