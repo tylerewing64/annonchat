@@ -81,7 +81,13 @@ li {
     
 }
 
+.hover-green:hover{ 
+    color:lightgreen;
+}
 
+.hover-red:hover{ 
+    color:red;
+}
 .center-horizontal{ 
     margin: 0 auto;
    
@@ -159,4 +165,13 @@ width:90%;
 
 .margin-top-10px{ 
     margin-top:10px;
+}
+
+.width-300px{ 
+    width:300px;
+}
+
+.z-index-10{ 
+    position:absolute;
+    z-index: 10;
 }
