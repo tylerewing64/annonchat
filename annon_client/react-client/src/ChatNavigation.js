@@ -10,10 +10,10 @@ function ChatNavigation() {
     <div className='flex-column flex-across flex-space-between height-full '>
         <div className='nav-bar-control flex-across flex-space-between padding-10px height-top'>
             
-            <span class="material-symbols-outlined color-black">minimize</span>
+            <span class="material-symbols-outlined color-black">menu</span>
             
          
-                <span class="material-symbols-outlined color-black" onClick={() => Myfunction()}>sms</span>
+                <span class="material-symbols-outlined color-black" onClick={() => Myfunction()}>chat_bubble</span>
           
         </div>
 
