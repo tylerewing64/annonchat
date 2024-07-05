@@ -1,23 +1,30 @@
 import React from 'react'
 
-function ChatNavigation() {
+function ChatNavigation({setDisplayMinChatNav}) {
 
 
     const Myfunction = () => { 
 
     }
+
+    const minimizeChatNavigation = () => { 
+        setDisplayMinChatNav(false);
+       
+    }
+
   return (
-    <div className='flex-column flex-across flex-space-between height-full '>
+    <div className='flex-column flex-across flex-space-between height-full minimize-chat width-300px  '>
         <div className='nav-bar-control flex-across flex-space-between padding-10px height-top'>
-            
-            <span class="material-symbols-outlined color-black">menu</span>
+        <span class="material-symbols-outlined color-black cursor-pointer hover-green " onClick = {() => minimizeChatNavigation()}>menu</span>
+        <span class="material-symbols-outlined color-black  cursor-pointer " onClick={() => Myfunction()}>sms</span>
+        
             
          
-                <span class="material-symbols-outlined color-black" onClick={() => Myfunction()}>chat_bubble</span>
+              
           
         </div>
 
-        <div className ="messages-tab padding-10px height-middle">
+        <div className ="messages-tab padding-10px height-middle ">
             <ul className='color-white'>
                 <li className = "hover-grey">Jevonte</li>
                 <li className = "hover-grey">Toookah</li>
