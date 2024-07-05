@@ -14,8 +14,9 @@ datasource db {
 }
 
 model User { 
-  username    Int @id @default(autoincrement())
-  password    String 
-  role        String
-  key         String 
+  id          Int  @id @default(autoincrement())
+  username    String @unique
+  password    String
+  role        String?
+  key         String? 
 }
