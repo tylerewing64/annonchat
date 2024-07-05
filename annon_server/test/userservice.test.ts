@@ -19,5 +19,5 @@ test('Check if createCredentials adds the same user with the same username twice
 });
 
 test('Test to see if encryption key is created', () => {
-    expect(createEncryptionKey('us')).toBe('79adb2a2fce5c6ba215fe5f27f532d4e7edbac4b6a5e09e1ef3a08084a904621');
+    expect(createEncryptionKey('test')).toBe('ce0f6c28b5869ff166714da5fe08554c70c731a335ff9702e38b00f81ad348c6');
 })
