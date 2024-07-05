@@ -16,7 +16,12 @@ export const createCredentials = async(username: string, password : string) => {
 
 }
 
-//Creates Encryption key
-export const createEncryptionKey = async(userID: string) => { 
+//Creates Encryption key User Case A002
+export const createEncryptionKey = (userID: string) => { 
+    let hash = createHash('sha256');
+    hash.update('us');
+    return hash.digest('hex');
+    //return createHash('sha256').update(userID.slice(0,-2)).digest('hex');
+
 
 }
