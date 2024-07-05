@@ -1,10 +1,10 @@
 const { Router } = require('express');
-const auth_controller = require('../controllers/auth_controller.js');
+const user_controller = require('../controllers/user_controller.ts');
 
 const router = Router();
 
-router.post('/user', auth_controller.register); //Creates New User
-router.get('/user', auth_controller.login) //Verifies user and returns JWT Token
+router.post('/user', user_controller.register); //Creates New User
 
 
-export default  router;
+
+export default router;

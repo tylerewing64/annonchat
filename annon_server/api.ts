@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
-
+app.use('/api' ,router);
 // Start the server
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
