@@ -5,6 +5,7 @@ import Register from './Register';
 import reportWebVitals from './reportWebVitals';
 import Homepage  from './Homepage';
 import ChatPage from './ChatPage';
+import Login from './Login';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   

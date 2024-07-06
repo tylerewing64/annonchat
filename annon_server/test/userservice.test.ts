@@ -1,4 +1,4 @@
-import { hashPassword, createCredentials, createEncryptionKey} from "../services/user_services";
+import { hashPassword, createCredentials, createEncryptionKey, getUserData_W_UNAME_PWORD} from "../services/user_services";
 
 test('Test to see if hashPassword retuns a hashed version of a string', () => { 
     expect(hashPassword('test1!')).toBe('7c4a7b676e873b49d643151b7675e9b51040be4bd64bfdcd0517430942ac5b0b');
@@ -21,3 +21,9 @@ test('Check if createCredentials adds the same user with the same username twice
 test('Test to see if encryption key is created', () => {
     expect(createEncryptionKey('test')).toBe('ce0f6c28b5869ff166714da5fe08554c70c731a335ff9702e38b00f81ad348c6');
 })
+
+
+test('Get user data using username and password', async() => { 
+    expect(await getUserData_W_UNAME_PWORD('tyler','tyler1')).toEqual([{"id": 2, "key": null, "password": "tyler1", "role": null, "username": "tyler"}]);
+})
+

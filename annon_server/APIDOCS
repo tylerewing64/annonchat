@@ -1,0 +1,4 @@
+Status Codes: 
+Any 500 code is an internal server error
+501 - Data type error 
+502 - Missing data/ data not specified
