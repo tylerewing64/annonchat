@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { hashPassword, createCredentials, createEncryptionKey, getUserData_W_UNAME_PWORD } from '../services/user_services';
-
-
+import { createToken } from '../services/authentication_service';
+import { hash } from 'crypto';
 //Checks if username & password. Hashes password. Creates unique encryption key. Sends credentials to database.
 export const register = async (req: Request, res: Response) => { 
 
@@ -33,16 +33,19 @@ export const login = async ( req: Request, res: Response) => {
     if(username  && password){ 
         //Check the data type of the login credentials
         if( typeof username === "string" && typeof password === "string"){
+            const hashedPw = hashPassword(password);
             //Get the userdata using login credentials
-            await getUserData_W_UNAME_PWORD(username, password)
+            await getUserData_W_UNAME_PWORD(username, hashedPw)
             .then(resolve => { 
                 //Check If length of the returned results is 0, if true that means no user matches the credentials entered.
                 if(resolve.length === 0){ 
                     res.status(404).json('Wrong Email or Password');
                     return;
                 }else {
-                //Send data to auth service to generate JWT 
-                res.status(200).json(resolve[0])
+                //Send data to auth service to generate JWT
+                const payloadObj = {id: resolve[0].id, username: resolve[0].username, role: resolve[0].role || "null" }
+                const token  = createToken(payloadObj);
+                res.status(200).json({token : token});
                 }
             })
         }else { 

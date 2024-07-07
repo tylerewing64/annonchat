@@ -24,12 +24,12 @@ function ChatNavigation({setDisplayMinChatNav}) {
           
         </div>
 
-        <div className ="messages-tab padding-10px height-middle ">
+        <div className ="messages-tab  height-middle ">
             <ul className='color-white'>
-                <li className = "hover-grey">Jevonte</li>
-                <li className = "hover-grey">Toookah</li>
-                <li className = "hover-grey">Max</li>
-                <li className = "hover-grey">Jill</li>
+                <li className = "hover-grey padding-10px cursor-pointer">@Jevonte</li>
+                <li className = "hover-grey padding-10px cursor-pointer">@Toookah</li>
+                <li className = "hover-grey padding-10px cursor-pointer">@Max</li>
+                <li className = "hover-grey padding-10px cursor-pointer">@Jill</li>
             
               
             </ul>

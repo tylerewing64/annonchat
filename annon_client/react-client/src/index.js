@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import './/css/index.css';
 import Register from './Register';
 import reportWebVitals from './reportWebVitals';
@@ -8,8 +9,15 @@ import ChatPage from './ChatPage';
 import Login from './Login';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  
-    <ChatPage />
+    <BrowserRouter>
+        <Routes>
+            <Route path ="/" exact= {true} Component={Login} />
+            <Route path ="/chat" exact= {true} Component={ChatPage} />
+            <Route path ="/register" exact= {true} Component={Register} />
+        </Routes>
+    
+    </BrowserRouter>
+   
 
 );
 

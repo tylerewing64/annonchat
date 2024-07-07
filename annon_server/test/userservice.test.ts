@@ -24,6 +24,7 @@ test('Test to see if encryption key is created', () => {
 
 
 test('Get user data using username and password', async() => { 
-    expect(await getUserData_W_UNAME_PWORD('tyler','tyler1')).toEqual([{"id": 2, "key": null, "password": "tyler1", "role": null, "username": "tyler"}]);
+    const hashedPassword = hashPassword('letmein1')
+    expect(await getUserData_W_UNAME_PWORD('tyler', hashedPassword)).toEqual([{"id": 66, "key": "3d074cac28b7961ec4a171d46ed73d184d6722f418bb515be5426a98eef91678", "password": hashedPassword, "role": "admin", "username": "tyler"}]);
 })
 

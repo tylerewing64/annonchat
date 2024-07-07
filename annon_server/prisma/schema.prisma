@@ -17,7 +17,7 @@ model User {
   id          Int  @id @default(autoincrement())
   username    String @unique
   password    String
-  role        String?
+  role        String? @default("user")
   key         String? 
 }
 

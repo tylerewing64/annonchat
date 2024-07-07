@@ -5,6 +5,7 @@ import { useEffect, useState, useRef } from 'react';
 
 function Register() {
   const [errText, setErrText] = useState('');
+  const [errTextColor, setErrTextColor] = useState('color-red');
   const username = useRef(null);
   const password = useRef(null);
 
@@ -50,9 +51,13 @@ function Register() {
       body: JSON.stringify({ username, password })
     })
     .then(async(response) => {
+      let data = await response.json();
       if (!response.ok) {
-        let data = await response.json();
         setErrText(data);
+      }else if(response.ok){
+        setErrTextColor('color-green wrap-text');
+        setErrText(`Success! Please store your encryption key: ${data.encryptionKey}` );
+        console.log(data.encryptionKey);
       }
     })
     .catch(error => {
@@ -77,8 +82,8 @@ function Register() {
           <p>Password:</p>
           <input className='margin-top-10px hover-grey' type="password" id="password-input" ref={password} onChange={(e) => isEmpty(e)}/>
           <button type="button" id="submit" className = "margin-top-10px cursor-pointer hover-bg-green padding-10px"onClick={() => signUp(username, password)}>Sign Up</button>
-          <p className='color-red'>{errText}</p>
-          <p className='text-align-center width-100-percent cursor-pointer'><u >Login?</u></p>
+          <p className= {errTextColor}>{errText}</p>
+          <p className='text-align-center width-100-percent cursor-pointer'><a href = "/">Login?</a></p>
         </div>
       </div>
     </body>

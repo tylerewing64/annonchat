@@ -195,3 +195,15 @@ width:90%;
 .color-red{ 
     color:lightcoral;
 }
+
+.color-green{ 
+    color:lightgreen;
+}
+
+.wrap-text{ 
+    overflow-wrap:break-word;
+}
+
+.width-half{ 
+    width: 35%;
+}

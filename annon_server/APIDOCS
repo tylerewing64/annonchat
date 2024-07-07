@@ -1,4 +1,18 @@
-Status Codes: 
+Status Codes:
 Any 500 code is an internal server error
-501 - Data type error 
+501 - Data type error
 502 - Missing data/ data not specified
+404 - Not founds
+405 - Missing JSON Web Token
+
+Endpoints -
+
+GET /user
+
+- Returns JSON WEB TOKEN.
+- requires username and password in request header.
+
+POST /user
+
+- Creates new user and returns unique encryption key to login in if password is lost.
+- Requires username and password in request body.

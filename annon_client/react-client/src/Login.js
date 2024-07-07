@@ -1,9 +1,17 @@
-import {React, useState,useRef} from 'react'
+import {React, useState,useRef, useEffect} from 'react'
+import socket from './socketConfig/socket';
+import Cookies from 'js-cookie';
 
 export default function Login() {
     const [errText, setErrText] = useState('');
     const username = useRef(null);
     const password = useRef(null);
+
+    useEffect(() => { 
+      Cookies.remove('token');
+      socket.disconnect();
+    },[])
+
   
     const login = (username, password) => {
       setErrText('');
@@ -41,9 +49,12 @@ export default function Login() {
         }
       })
       .then(async(response) => {
+        let data = await response.json();
         if (!response.ok) {
-          let data = await response.json();
           setErrText(data);
+        }else if (response.ok){ 
+          Cookies.set('token', data?.token , {expires: 1/24});
+          window.location.href = '/chat'
         }
       })
       .catch(error => {
@@ -70,7 +81,7 @@ export default function Login() {
               <input className='margin-top-10px hover-grey' type="password" id="password-input" ref={password} onChange={(e) => isEmpty(e)}/>
               <button type="button" id="submit" className = "margin-top-10px cursor-pointer hover-bg-green padding-10px"onClick={() => login(username, password)}>Login</button>
               <p className='color-red'>{errText}</p>
-              <p className='text-align-center width-100-percent cursor-pointer'><u >Sign Up?</u></p>
+              <p className='text-align-center width-100-percent cursor-pointer'><a href='/register'>Sign Up?</a></p>
             </div>
           </div>
         </body>
