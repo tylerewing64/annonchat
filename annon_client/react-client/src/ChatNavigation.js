@@ -1,10 +1,25 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
+import NewMessage from './popups/NewMessage';
 
-function ChatNavigation({setDisplayMinChatNav}) {
+function ChatNavigation({setDisplayMinChatNav, SET_TOGGLE_NEW_MSG, TOGGLE_NEW_MSG, fetchConversations, conversations, username}) {
+   
 
 
-    const Myfunction = () => { 
 
+    useEffect(()=>{ 
+        fetchConversations();
+    },[])
+
+   
+
+
+    const toggle_popup = () => { 
+        if(TOGGLE_NEW_MSG === true){ 
+            SET_TOGGLE_NEW_MSG(null)
+        }else { 
+            SET_TOGGLE_NEW_MSG(true);
+        }
+        
     }
 
     const minimizeChatNavigation = () => { 
@@ -16,22 +31,15 @@ function ChatNavigation({setDisplayMinChatNav}) {
     <div className='flex-column flex-across flex-space-between height-full minimize-chat width-300px  '>
         <div className='nav-bar-control flex-across flex-space-between padding-10px height-top'>
         <span class="material-symbols-outlined color-black cursor-pointer hover-green " onClick = {() => minimizeChatNavigation()}>menu</span>
-        <span class="material-symbols-outlined color-black  cursor-pointer " onClick={() => Myfunction()}>sms</span>
-        
-            
-         
-              
-          
+        <span class="material-symbols-outlined color-black  cursor-pointer " onClick={() => toggle_popup()}>sms</span>
         </div>
 
         <div className ="messages-tab  height-middle ">
             <ul className='color-white'>
-                <li className = "hover-grey padding-10px cursor-pointer">@Jevonte</li>
-                <li className = "hover-grey padding-10px cursor-pointer">@Toookah</li>
-                <li className = "hover-grey padding-10px cursor-pointer">@Max</li>
-                <li className = "hover-grey padding-10px cursor-pointer">@Jill</li>
-            
-              
+                {/*User one can either be your or the receipeint thus check to see which one it is */}
+                {conversations && conversations.map(conversation => (
+                <li className = "hover-grey padding-10px cursor-pointer">@{conversation.userOne === username ? conversation.userTwo : conversation.userOne }</li> 
+                ))}
             </ul>
         </div>
 

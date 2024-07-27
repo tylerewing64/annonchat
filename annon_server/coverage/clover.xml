@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1720314679745" clover="3.2.0">
-  <project timestamp="1720314679745" name="All files">
-    <metrics statements="28" coveredstatements="27" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8" elements="36" coveredelements="35" complexity="0" loc="28" ncloc="28" packages="1" files="2" classes="2"/>
+<coverage generated="1722034286157" clover="3.2.0">
+  <project timestamp="1722034286157" name="All files">
+    <metrics statements="43" coveredstatements="37" conditionals="1" coveredconditionals="0" methods="14" coveredmethods="12" elements="58" coveredelements="49" complexity="0" loc="43" ncloc="43" packages="1" files="3" classes="3"/>
     <file name="authentication_service.ts" path="C:\Users\tyler\Desktop\gitrepos_\annonchat\annon_server\services\authentication_service.ts">
       <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <line num="3" count="1" type="stmt"/>
@@ -15,6 +15,24 @@
       <line num="23" count="2" type="stmt"/>
       <line num="24" count="1" type="stmt"/>
       <line num="26" count="1" type="stmt"/>
+    </file>
+    <file name="message_services.ts" path="C:\Users\tyler\Desktop\gitrepos_\annonchat\annon_server\services\message_services.ts">
+      <metrics statements="15" coveredstatements="10" conditionals="1" coveredconditionals="0" methods="6" coveredmethods="4"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="14" count="1" type="cond" truecount="0" falsecount="1"/>
+      <line num="15" count="0" type="stmt"/>
+      <line num="17" count="1" type="stmt"/>
+      <line num="22" count="1" type="stmt"/>
+      <line num="23" count="0" type="stmt"/>
+      <line num="24" count="0" type="stmt"/>
+      <line num="30" count="0" type="stmt"/>
+      <line num="32" count="0" type="stmt"/>
+      <line num="36" count="1" type="stmt"/>
+      <line num="37" count="1" type="stmt"/>
+      <line num="50" count="1" type="stmt"/>
     </file>
     <file name="user_services.ts" path="C:\Users\tyler\Desktop\gitrepos_\annonchat\annon_server\services\user_services.ts">
       <metrics statements="17" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>

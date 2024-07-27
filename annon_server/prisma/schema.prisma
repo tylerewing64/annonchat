@@ -23,12 +23,12 @@ model User {
 
 model MessageGroup { 
   id            Int  @id @default(autoincrement())
-  userOne       Int?
-  userTwo       Int?
-  userThree     Int?
-  userFour      Int?
-  userFive      Int?
-  date_created  DateTime
+  userOne       String?
+  userTwo       String?
+  userThree     String?
+  userFour      String?
+  userFive      String?
+  date_created  DateTime @default(now())
   
 }
 

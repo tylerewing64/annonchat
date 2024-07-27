@@ -10,7 +10,20 @@ function ChatPage() {
 
   const [displayMinChatNav, setDisplayMinChatNav] = useState(false)
   const [auth, setAuth] = useState(false);
+  const [TOGGLE_NEW_MSG, SET_TOGGLE_NEW_MSG] = useState(null);
+  const [conversations, setConversations] = useState();
 
+
+///EDIT THIS TO BE DYNAMIC IT SHOULD DECRYPT JSON WEB TOKEN AND GET THE USERNAME THAT WAY
+  let username = 'tyler';
+
+
+const fetchConversations = async() => { 
+  const response = await fetch(`http://localhost:8080/api/conversation?username=${username}`)
+  const data = await response.json();
+  setConversations(data)
+
+}
 
   useEffect(()=> {
     
@@ -36,18 +49,19 @@ function ChatPage() {
     
     {auth &&( 
     <div className='flex-across color-theme-chat '>
-    
+      
         <div className='right-side  color-theme-nav z-index-10  ' >
           {/*Keep the Chat Navigation minimized when user first visits site */}
           {displayMinChatNav 
           ? 
-            <ChatNavigation setDisplayMinChatNav ={setDisplayMinChatNav} /> 
+            <ChatNavigation setDisplayMinChatNav ={setDisplayMinChatNav} TOGGLE_NEW_MSG = {TOGGLE_NEW_MSG} SET_TOGGLE_NEW_MSG={SET_TOGGLE_NEW_MSG} fetchConversations={fetchConversations} conversations={conversations} username={username} /> 
           :
             <ChatNavigationMin setDisplayMinChatNav ={setDisplayMinChatNav} />  
           }
            
         </div>
-        <div className = "main-section width-100-percent height-full color-theme-chat "><Chat /></div>
+        {TOGGLE_NEW_MSG ? <NewMessage  SET_TOGGLE_NEW_MSG={SET_TOGGLE_NEW_MSG}  fetchConversations={fetchConversations} /> : null}
+        <div className = "main-section width-100-percent height-full color-theme-chat cursor-pointer "><Chat /></div>
     
     </div >
     )}

@@ -1,11 +1,14 @@
 import {React, useRef, useState} from 'react';
 import socket from './socketConfig/socket';
 
+import CryptoJS from 'crypto-js';
+
+
 function Chat() {
     const senderTextBoxInput = useRef(null)
     const chat = useRef(null);
     const [chatData, setChatData] = useState(null); //chatData is a array of objects containing the chat messages
-
+    const secretKey = 'encrypted_key';
   //Checks if chatData is null if it is create new object. If its not updating state without changing prev state.
     const generateSenderChatEl = (input) => { 
       if(!chatData){ 
@@ -17,12 +20,20 @@ function Chat() {
     }
 
     const sendMessageSocket = (input) => { 
-      socket.emit("message", input)
+      socket.emit("message", input);
+      
 
     }
+    //Takes string and encrypts it 
+    const encryptString = (input) => { 
+      const encryptedMessage = CryptoJS.AES.encrypt(input, secretKey).toString();
+      return  encryptedMessage;
+    }
 
+  //Ran every time you click send button 
     const sendChat = (input) => { 
-      sendMessageSocket(input); 
+      const encryptedMessage = encryptString(input);
+      sendMessageSocket(encryptedMessage);
       generateSenderChatEl(input);
       senderTextBoxInput.current.value = "";
 

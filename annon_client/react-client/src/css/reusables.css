@@ -207,3 +207,29 @@ width:90%;
 .width-half{ 
     width: 35%;
 }
+
+.center-using-transform { 
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+.padding-5px { 
+    padding:5px;
+}
+
+.width-95-percent{ 
+    width:95%
+}
+
+.chat-bg{ 
+    background-color: #212121;
+}
+
+.background-color-none{ 
+    background-color: none;
+}
+
+.border{ 
+    border:1px solid white;
+}

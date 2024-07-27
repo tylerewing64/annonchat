@@ -2,6 +2,7 @@ import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import router from './routes/user_route';
+import conversation_endpoints from  './routes/message_route'
 
 const app = express();
 const port = 8080;
@@ -17,6 +18,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.use('/api' ,router);
+app.use('/api', conversation_endpoints)
 // Start the server
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);

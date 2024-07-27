@@ -31,7 +31,7 @@ io.on('connection', (socket) => {
   // Handle custom events
   socket.on('message', (msg) => {
     console.log('message: ' + msg);
-    io.emit('message', msg); // Broadcast the message to all clients
+    
   });
 
   socket.on('typing', (typing) => { 

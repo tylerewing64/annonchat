@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `messagegroup` MODIFY `date_created` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3);
