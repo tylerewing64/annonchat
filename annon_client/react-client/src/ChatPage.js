@@ -5,29 +5,38 @@ import ChatNavigationMin from './ChatNavigationMin';
 import Chat from './Chat';
 import "../src/css/reusables.css";
 import NewMessage from './popups/NewMessage'; 
-import Cookies from 'js-cookie'
+import Cookies from 'js-cookie';
+import {jwtDecode} from 'jwt-decode'
+
 function ChatPage() {
 
   const [displayMinChatNav, setDisplayMinChatNav] = useState(false)
   const [auth, setAuth] = useState(false);
   const [TOGGLE_NEW_MSG, SET_TOGGLE_NEW_MSG] = useState(null);
   const [conversations, setConversations] = useState();
-
+  const [currentReceipient, setCurrentReceipient] = useState();
+  const [user, setUser] = useState({});
 
 ///EDIT THIS TO BE DYNAMIC IT SHOULD DECRYPT JSON WEB TOKEN AND GET THE USERNAME THAT WAY
-  let username = 'tyler';
 
+//get user data from jwt token
+const decryptJwtPayload = () => { 
+  setUser(jwtDecode(Cookies.get('token')))
+  console.log(user)
+}
 
 const fetchConversations = async() => { 
-  const response = await fetch(`http://localhost:8080/api/conversation?username=${username}`)
+  const response = await fetch(`http://localhost:8080/api/conversation?username=${user.username}`)
   const data = await response.json();
   setConversations(data)
 
 }
 
+ 
   useEffect(()=> {
-    
+    //If authenticated render the page
     if(Cookies.get('token')){ 
+      decryptJwtPayload();
       setAuth(true);
       INIT_socket();
 
@@ -37,7 +46,7 @@ const fetchConversations = async() => {
   },[setAuth])
 
     const INIT_socket = () => { 
-      socket.emit('connection');
+      socket.emit('connection', Cookies.get('token'));
     }
 
   return (
@@ -54,14 +63,15 @@ const fetchConversations = async() => {
           {/*Keep the Chat Navigation minimized when user first visits site */}
           {displayMinChatNav 
           ? 
-            <ChatNavigation setDisplayMinChatNav ={setDisplayMinChatNav} TOGGLE_NEW_MSG = {TOGGLE_NEW_MSG} SET_TOGGLE_NEW_MSG={SET_TOGGLE_NEW_MSG} fetchConversations={fetchConversations} conversations={conversations} username={username} /> 
+            <ChatNavigation setDisplayMinChatNav ={setDisplayMinChatNav} TOGGLE_NEW_MSG = {TOGGLE_NEW_MSG} SET_TOGGLE_NEW_MSG={SET_TOGGLE_NEW_MSG} fetchConversations={fetchConversations} conversations={conversations} user ={user}
+            setCurrentReceipient = {setCurrentReceipient} /> 
           :
             <ChatNavigationMin setDisplayMinChatNav ={setDisplayMinChatNav} />  
           }
            
         </div>
         {TOGGLE_NEW_MSG ? <NewMessage  SET_TOGGLE_NEW_MSG={SET_TOGGLE_NEW_MSG}  fetchConversations={fetchConversations} /> : null}
-        <div className = "main-section width-100-percent height-full color-theme-chat cursor-pointer "><Chat /></div>
+        <div className = "main-section width-100-percent height-full color-theme-chat cursor-pointer "><Chat   currentReceipient = {currentReceipient} user = {user}/></div>
     
     </div >
     )}

@@ -2,6 +2,7 @@ import express, { Request, Response, NextFunction } from 'express';
 import { Server } from 'socket.io';
 import http from 'http';
 import cors from 'cors';
+import {extractJwtPayload} from './middleware/decryptJWT'
 
 const app = express();
 const port = 4000;
@@ -25,13 +26,26 @@ const io = new Server(server, {
   }
 });
 
-io.on('connection', (socket) => {
-  console.log('a user connected');
 
-  // Handle custom events
-  socket.on('message', (msg) => {
-    console.log('message: ' + msg);
-    
+const USER_ID_SOCKET_ID_MAP = new Map();
+
+io.on('connection', (socket) => {
+
+ 
+  socket.on('connection', (data) =>{ 
+    //Extract the JWT TO get username from payload then place it in a map relative to the socket id
+    const payloadObj = extractJwtPayload(data);
+    USER_ID_SOCKET_ID_MAP.set(payloadObj.username, socket.id);
+    USER_ID_SOCKET_ID_MAP.set(socket.id, payloadObj.username);
+   
+  })
+  // Send msg to receipeint using their socket id
+  socket.on('message', (msg, receipient) => {
+    console.log('message: ' + msg + ' ' +  receipient + ' ' + USER_ID_SOCKET_ID_MAP.get(socket.id) + " " + USER_ID_SOCKET_ID_MAP.get(receipient));
+    const receiver = USER_ID_SOCKET_ID_MAP.get(receipient); //Get receiver socket ID;
+    const sender = USER_ID_SOCKET_ID_MAP.get(socket.id) //Get sender username
+    socket.to(receiver).emit('receiveMessage', msg, sender); // Send to receiver socket id and send the sender's username
+    //Create code to send message to restful api to store message in database
   });
 
   socket.on('typing', (typing) => { 
@@ -39,7 +53,7 @@ io.on('connection', (socket) => {
   })
   // Handle disconnection
   socket.on('disconnect', () => {
-    console.log('user disconnected');
+    
   });
 });
 

@@ -153,7 +153,10 @@ width:90%;
 
 
 .margin-50-percent-left{ 
-    margin-left:40%;
+    margin-left:50%;
+}
+.margin-30-percent-left{ 
+    margin-left:30%
 }
 
 
@@ -232,4 +235,12 @@ width:90%;
 
 .border{ 
     border:1px solid white;
+}
+
+.margin-30-percent-right{ 
+    margin-right:50%
+}
+
+.background-color-green{ 
+    background-color: #58bc58;
 }
