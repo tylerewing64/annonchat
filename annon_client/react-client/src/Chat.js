@@ -11,6 +11,7 @@ function Chat({currentReceipient, user}) {
     const secretKey = 'encrypted_key';
 
     useEffect(() => {
+      setChatData([]);
       const handleMessage = (msg, sender) => {
         console.log(currentReceipient, sender);
         if (currentReceipient === sender) {
